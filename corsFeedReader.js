@@ -15,7 +15,7 @@ class CorsFeedReader {
             beforeTemplate: function(){console.log("beforeTemplate not set")},
             afterTemplate: function(){console.log("afterTemplate not set")},
             template: `
-            <div class="feed-item {category}">
+            <div class="feed-item {{ category }}">
               <a href="{{ link }}">
                   <h2>{{ title }}</h2>
                 </a>
