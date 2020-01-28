@@ -1,13 +1,19 @@
 # corsFeedReader 
 
-Feed reader using fetch API, Only works on same domain, unless you set [cors](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) server side for external domains, only supports RSS format, ATOM and JSON will come in the future if i need them.
+Feed reader using fetch API, Only works on same domain, unless you set [cors](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) server side for external domains, supports RSS format.
 
-## Setting Cors
+### Setting Cors
 [Nginx](https://enable-cors.org/server_nginx.html)
 
 [Apache](https://enable-cors.org/server_apache.html)
 
-## Usage
+### Build
+```
+npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/preset-minify
+npm run build
+Output: ./build/corsFeedReader.min.js
+```
+### Usage
 ```
 const myFeed = new CorsFeedReader(".appendTo-selector", {
         fetchAPI: 'https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch'
