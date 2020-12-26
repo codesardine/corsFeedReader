@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Test Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="corsFeedReader.js" type="text/javascript"></script>
+    <script>
+        const myFeed = new CorsFeedReader(".appendTo-selector", {
+        fetchAPI: 'https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch'
+        }, {
+        feedUrl: "https://forum.manjaro.org/c/announcements/news.rss",
+        dev: true,
+        items: 5,
+        template: `
+            <div class="feed-item {{ category }}">
+              <a href="{{ link }}">
+                  <h2>{{ title }}</h2>
+                </a>
+              <summary class="description">
+                {{ pubDate }} <br>
+                {{ description }}
+              </summary>
+            `,
+        beforeTemplate: function(content) {    
+        },
+        afterTemplate: function(content) {
+        }
+    });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
