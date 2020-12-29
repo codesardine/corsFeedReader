@@ -109,10 +109,10 @@ class CorsFeedReader {
                 }
                                     
             }
-        this.templateOutput(template)
+        this.templateOutput(template, content)
     }
 
-    templateOutput(template) {
+    templateOutput(template, content) {
         let container = document.querySelector(this.itemContainer)
         container.insertAdjacentHTML('beforeend', template)
         this.afterTemplate(content)

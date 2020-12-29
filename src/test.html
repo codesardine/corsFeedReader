@@ -7,12 +7,12 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <script src="corsFeedReader.js" type="text/javascript"></script>
     <script>
-        const myFeed = new CorsFeedReader(".appendTo-selector", {
+        const myFeed = new CorsFeedReader("body", {
         fetchAPI: 'https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch'
         }, {
         feedUrl: "https://forum.manjaro.org/c/announcements/news.rss",
         dev: true,
-        items: 5,
+        items: 3,
         template: `
             <div class="feed-item {{ category }}">
               <a href="{{ link }}">
@@ -22,11 +22,7 @@
                 {{ pubDate }} <br>
                 {{ description }}
               </summary>
-            `,
-        beforeTemplate: function(content) {    
-        },
-        afterTemplate: function(content) {
-        }
+            `
     });
     </script>
 </head>
