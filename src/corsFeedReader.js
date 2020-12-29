@@ -82,7 +82,7 @@ class CorsFeedReader {
                 item.childNodes.forEach(child => {
                     child = child.nodeName
                     try {
-                        if (!child.startsWith("#")) {
+                        if (!child.startsWith("#")&&child.indexOf(":") === -1) {
                             content[child] = item.querySelector(child)
                         }
                     }
